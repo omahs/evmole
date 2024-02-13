@@ -1,7 +1,7 @@
-import Op from './opcodes.js'
-import Stack from './stack.js'
-import Memory from './memory.js'
-import Element from './element.js'
+import { Op } from './opcodes.js'
+import { Stack } from './stack.js'
+import { Memory } from './memory.js'
+import { Element } from './element.js'
 import { toBigInt, modExp, bigIntBitLength } from '../utils.js'
 
 const E256 = 2n ** 256n
@@ -50,7 +50,7 @@ export class Vm {
 
   step() {
     const op = this.current_op()
-    const ret = this.#exec_opcode(op)
+    const ret = this.exec_opcode(op)
     if (op != Op.JUMP && op != Op.JUMPI) {
       this.pc += 1
     }
@@ -60,7 +60,7 @@ export class Vm {
     return [op, ...ret]
   }
 
-  #exec_opcode(op) {
+  exec_opcode(op) {
     if (op >= Op.PUSH0 && op <= Op.PUSH32) {
       const n = op - Op.PUSH0
       if (n != 0) {

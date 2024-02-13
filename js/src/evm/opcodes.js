@@ -1,4 +1,4 @@
-export default class Op {
+export class Op {
   static name(code) {
     return this.#names[code]
   }

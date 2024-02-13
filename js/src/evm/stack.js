@@ -1,9 +1,9 @@
 import { bigIntToUint8Array, uint8ArrayToBigInt } from '../utils.js'
-import Element from './element.js'
+import { Element } from './element.js'
 
 export class StackIndexError extends Error {}
 
-export default class Stack {
+export class Stack {
   constructor() {
     this._data = []
   }

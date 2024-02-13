@@ -9,8 +9,11 @@
   "jsdelivr": "dist/index.iife.js",
   "type": "module",
   "exports": {
-    "import": "./dist/index.esm.js",
-    "require": "./dist/index.cjs.js"
+    ".": {
+        "import": "./dist/index.esm.js",
+        "require": "./dist/index.cjs.js"
+    },
+    "./evm/*": "./src/evm/*.js"
   },
   "scripts": {
     "build-cjs": "npx esbuild ./src/ --bundle --minify --sourcemap --format=cjs --outfile=dist/index.cjs.js",

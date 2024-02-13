@@ -1,7 +1,7 @@
-import Op from './evm/opcodes.js'
+import { Op } from './evm/opcodes.js'
 import { Vm, UnsupportedOpError } from './evm/vm.js'
 import { StackIndexError } from './evm/stack.js'
-import Element from './evm/element.js'
+import { Element } from './evm/element.js'
 import { bigIntToUint8Array, uint8ArrayToBigInt, bigIntBitLength, toUint8Array } from './utils.js'
 
 class Arg {

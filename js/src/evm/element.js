@@ -1,4 +1,4 @@
-export default class Element {
+export class Element {
   constructor(data, label) {
     this.data = data
     this.label = label

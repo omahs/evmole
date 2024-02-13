@@ -1,4 +1,4 @@
-export default class Memory {
+export class Memory {
   constructor() {
     this._data = []
   }
